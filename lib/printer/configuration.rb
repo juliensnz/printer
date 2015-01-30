@@ -3,7 +3,7 @@ require 'dm-timestamps'
 require "resque"
 
 # DataMapper::Logger.new(STDOUT, :debug)
-DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/printer')
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://printer:printer@localhost/printer')
 DataMapper.repository(:default).adapter.resource_naming_convention = DataMapper::NamingConventions::Resource::UnderscoredAndPluralizedWithoutModule
 
 # Load all DataMapper models
